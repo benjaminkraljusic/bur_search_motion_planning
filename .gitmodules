@@ -1,0 +1,4 @@
+[submodule "smpl"]
+	path = smpl
+	url = https://github.com/benjaminkraljusic/smpl.git
+	branch = dist
