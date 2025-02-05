@@ -2,3 +2,12 @@
 	path = smpl
 	url = https://github.com/benjaminkraljusic/smpl.git
 	branch = dist
+[submodule "leatherman"]
+	path = leatherman
+	url = https://github.com/shohinm/leatherman.git
+[submodule "robowflex"]
+	path = robowflex
+	url = https://github.com/KavrakiLab/robowflex.git
+[submodule "rf/robowflex"]
+	path = rf/robowflex
+	url = https://github.com/KavrakiLab/robowflex.git

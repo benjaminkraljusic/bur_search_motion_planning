@@ -1,0 +1,17 @@
+Bootstrap: docker
+#From: ubuntu:18.04
+From: ros:noetic-ros-base
+
+%setup
+    mkdir -p "${APPTAINER_ROOTFS}"/opt/catkin_ws
+
+%post
+    # Install dependencies
+    /opt/catkin_ws/src/bur_search_motion_planning/utils/bash_scripts/pre-build.sh
+
+%environment
+    export CC="$(type -p gcc-7)"
+    export CXX="$(type -p g++-7)"
+
+%runscript
+    [ -x /ros_entrypoint.sh ] && /ros_entrypoint.sh bash
