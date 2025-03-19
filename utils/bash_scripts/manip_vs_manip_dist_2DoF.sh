@@ -2,21 +2,16 @@
 
 planner="arastar"
 
-# available planners:
-# "arastar"
-# "awastar"
-# "mhastar"
-# "larastar"
-# "egwastar"
-# "padastar"
+planning_space="manip_dist" # manip and manip_dist allowed
 
 problem_number=1
 
 dataset="$(rospack find smpl_test)/planar_arm/planar_2dof_datasets"
-roslaunch --wait smpl_test goal_planar_2dof_mini_bur_planning.launch \
+roslaunch --wait smpl_test goal_planar_2dof_manip_vs_manip_dist.launch \
     problem_index:="${problem_number}" \
     dataset:="${dataset}" \
     planner:="${planner}" \
+    planning_space:="${planning_space}" \
     visualize:="true" & 
 wait
 
