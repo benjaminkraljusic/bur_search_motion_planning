@@ -14,6 +14,8 @@ roslaunch --wait smpl_test goal_planar_2dof_manip_vs_manip_dist.launch \
     planning_space:="${planning_space}" \
     visualize:="true"
 
+cp ~/TezaETF/code/dok_ne_skontam_sto/manipulacija.txt ~/TezaETF/code/dok_ne_skontam_sto/manip.txt
+
 planning_space="manip_dist"
 
 roslaunch --wait smpl_test goal_planar_2dof_manip_vs_manip_dist.launch \
