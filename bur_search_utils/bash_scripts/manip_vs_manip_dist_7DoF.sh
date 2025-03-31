@@ -2,9 +2,9 @@
 
 planner="arastar"
 
-planning_space="manip" # manip and manip_dist allowed
+problem_number=$1
 
-problem_number=3
+planning_space="manip" # manip and manip_dist allowed
 
 dataset="$(rospack find smpl_test)/planar_arm/planar_7dof_datasets"
 roslaunch --wait smpl_test goal_planar_7dof_manip_vs_manip_dist.launch \

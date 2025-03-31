@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>bur_search_utils</name>
+  <version>0.0.1</version>
+  <description> Combining search-based planning and sampling-based motion planning methods. Planning utilizes burs of free C-space. </description> <!-- TODO -->
+
+  <maintainer email="bkraljusic1@etf.unsa.ba">Benjamin Kraljusic</maintainer>
+  
+  <license>MIT</license>
+
+  <author email="bkraljusic1@etf.unsa.ba">Benjamin Kraljusic</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>

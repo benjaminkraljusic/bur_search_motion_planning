@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(utils)
+project(bur_search_utils)
 
 find_package(catkin REQUIRED COMPONENTS
   rospy
