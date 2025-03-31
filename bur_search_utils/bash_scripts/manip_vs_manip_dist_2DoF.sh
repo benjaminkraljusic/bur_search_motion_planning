@@ -25,4 +25,4 @@ roslaunch --wait smpl_test goal_planar_2dof_manip_vs_manip_dist.launch \
     planning_space:="${planning_space}" \
     visualize:="true"  
 
-python3 ~/TezaETF/code/bur_search_workspace/src/bur_search_motion_planning/bur_search_utils/python_scripts/plot_searchV2.py $1
+python3 ~/TezaETF/code/bur_search_workspace/src/bur_search_motion_planning/bur_search_utils/python_scripts/plot_searchV2.py $1	
