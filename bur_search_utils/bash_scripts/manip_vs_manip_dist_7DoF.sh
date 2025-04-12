@@ -12,6 +12,8 @@ roslaunch --wait smpl_test goal_planar_7dof_manip_vs_manip_dist.launch \
     dataset:="${dataset}" \
     planner:="${planner}" \
     planning_space:="${planning_space}" \
+    epsilon:="50" \
+    improve:="true" \
     visualize:="true"
 
 planning_space="manip_dist"
@@ -21,5 +23,7 @@ roslaunch --wait smpl_test goal_planar_7dof_manip_vs_manip_dist.launch \
     dataset:="${dataset}" \
     planner:="${planner}" \
     planning_space:="${planning_space}" \
+    improve:="true" \
+    epsilon:="50" \
     visualize:="true" & 
 wait

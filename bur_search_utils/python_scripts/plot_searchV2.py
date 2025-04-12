@@ -194,7 +194,7 @@ def plot_planning_graph(ax, edges, nodes, obstacles, title):
     ax.set_title(title)
     ax.set_xlabel("Joint 1 (rad)")
     ax.set_ylabel("Joint 2 (rad)")
-    ax.grid(True)
+    ax.grid(False)
 
 def plot_solution(ax, solution):
     """
@@ -259,8 +259,8 @@ def main():
         ax.imshow(grid, origin='lower', extent=extent, cmap=cmap, alpha=0.5)
     
     # Plot planning graphs.
-    plot_planning_graph(ax1, edges1, nodes1, obstacles, "manip.txt")
-    plot_planning_graph(ax2, edges2, nodes2, obstacles, "manip_dist.txt")
+    plot_planning_graph(ax1, edges1, nodes1, obstacles, "Fixed motion primitives")
+    plot_planning_graph(ax2, edges2, nodes2, obstacles, "Burs of free C-space")
     
     # Plot the solution path (in red) on both subplots (if available) and get solution cost.
     cost1 = plot_solution(ax1, sol1) if sol1 else 0.0
