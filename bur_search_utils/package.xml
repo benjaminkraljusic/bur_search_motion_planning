@@ -11,8 +11,5 @@
   <author email="bkraljusic1@etf.unsa.ba">Benjamin Kraljusic</author>
 
   <buildtool_depend>catkin</buildtool_depend>
-
-  <export>
-    <metapackage/>
-  </export>
+  
 </package>

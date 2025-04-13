@@ -7,7 +7,7 @@ From: ros:noetic-ros-base
 
 %post
     # Install dependencies
-    /opt/catkin_ws/src/bur_search_motion_planning/utils/bash_scripts/pre-build.sh
+    /opt/catkin_ws/src/bur_search_motion_planning/bur_search_utils/bash_scripts/pre-build.sh
 
 %environment
     export CC="$(type -p gcc-7)"
