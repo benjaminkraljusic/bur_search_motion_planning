@@ -12,11 +12,13 @@ roslaunch --wait smpl_test goal_planar_2dof_manip_vs_manip_dist.launch \
     dataset:="${dataset}" \
     planner:="${planner}" \
     planning_space:="${planning_space}" \
-    epsilon:="5" \
+    epsilon:="100" \
     improve:="true" \
     visualize:="true"
 
-cp ~/TezaETF/code/dok_ne_skontam_sto/manipulacija.txt ~/TezaETF/code/dok_ne_skontam_sto/manip.txt
+# Copy contents from temporary file to the final destination and remove the temporary file
+cp ~/.ros/manipTmp.txt $(rospack find bur_search_utils)/2D_search_nodes/manip.txt
+rm ~/.ros/manipTmp.txt
 
 planning_space="manip_dist"
 
@@ -25,8 +27,12 @@ roslaunch --wait smpl_test goal_planar_2dof_manip_vs_manip_dist.launch \
     dataset:="${dataset}" \
     planner:="${planner}" \
     planning_space:="${planning_space}" \
-    epsilon:="5" \
+    epsilon:="100" \
     improve:="true" \
     visualize:="true"  
+
+# Copy contents from temporary file to the final destination and remove the temporary file
+cp ~/.ros/manip_dist.txt $(rospack find bur_search_utils)/2D_search_nodes/manip_dist.txt
+rm ~/.ros/manip_dist.txt
 
 python3 $(rospack find bur_search_utils)/python_scripts/plot_search.py $1	

@@ -4,6 +4,7 @@ import math
 import yaml
 import numpy as np
 import sys
+import os
 
 # Constants
 RESOLUTION = 0.017453292519943295  # 1 degree in radians
@@ -183,18 +184,29 @@ def is_state_in_collision(theta1, theta2, obstacles):
 def plot_planning_graph(ax, edges, nodes, obstacles, title):
     """
     On the given axis, plot the planning graph:
-      - Draw edges as black lines,
-      - Plot all planning states as blue circles.
+      - Draw edges as black lines (only if both parent and child are collision-free),
+      - Plot all collision-free planning states as blue circles.
     """
+    filtered_edges = []
+    valid_nodes = set()
     for parent, child in edges:
+        if not is_state_in_collision(*parent, obstacles) and not is_state_in_collision(*child, obstacles):
+            filtered_edges.append((parent, child))
+            valid_nodes.add(parent)
+            valid_nodes.add(child)
+
+    for parent, child in filtered_edges:
         ax.plot([parent[0], child[0]], [parent[1], child[1]], 'k-', linewidth=1)
-    all_states = np.array(list(nodes))
-    if len(all_states) > 0:
-        ax.scatter(all_states[:,0], all_states[:,1], c='blue', marker='o')
+
+    if valid_nodes:
+        all_states = np.array(list(valid_nodes))
+        ax.scatter(all_states[:, 0], all_states[:, 1], c='blue', marker='o')
+
     ax.set_title(title)
     ax.set_xlabel("Joint 1 (rad)")
     ax.set_ylabel("Joint 2 (rad)")
     ax.grid(False)
+
 
 def plot_solution(ax, solution):
     """
@@ -223,9 +235,10 @@ def plot_solution(ax, solution):
 
 def main():
     # File paths (adjust as needed)
-    search_file1 = "/home/beno/TezaETF/code/dok_ne_skontam_sto/manip.txt"
-    search_file2 = "/home/beno/TezaETF/code/dok_ne_skontam_sto/manip_dist.txt"
-    scene_file = "/home/beno/TezaETF/code/bur_search_workspace/src/bur_search_motion_planning/smpl/smpl_test/planar_arm/planar_2dof_datasets/scene000"
+    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+    search_file1 = os.path.join(SCRIPT_DIR, "../2D_search_nodes/manip.txt")
+    search_file2 = os.path.join(SCRIPT_DIR, "../2D_search_nodes/manip_dist.txt")
+    scene_file = os.path.join(SCRIPT_DIR, "../../smpl/smpl_test/planar_arm/planar_2dof_datasets/scene000") 
     
     # Read command line parameter.
     if len(sys.argv) < 2:
