@@ -238,7 +238,7 @@ def main():
     SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
     search_file1 = os.path.join(SCRIPT_DIR, "../2D_search_nodes/manip.txt")
     search_file2 = os.path.join(SCRIPT_DIR, "../2D_search_nodes/manip_dist.txt")
-    scene_file = os.path.join(SCRIPT_DIR, "../../smpl/smpl_test/planar_arm/planar_2dof_datasets/scene000") 
+    scene_file = os.path.join(SCRIPT_DIR, "../experiments/datasets/planar_2DoF/scene000") 
     
     # Read command line parameter.
     if len(sys.argv) < 2:

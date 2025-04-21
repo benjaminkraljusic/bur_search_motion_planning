@@ -6,7 +6,7 @@ problem_number=$1
 
 planning_space="manip" # manip and manip_dist allowed
 
-dataset="$(rospack find smpl_test)/planar_arm/planar_7dof_datasets"
+dataset="$(rospack find bur_search_utils)/experiments/datasets/planar_7DoF"
 roslaunch --wait smpl_test goal_planar_7dof_manip_vs_manip_dist.launch \
     problem_index:="${problem_number}" \
     dataset:="${dataset}" \
@@ -25,5 +25,4 @@ roslaunch --wait smpl_test goal_planar_7dof_manip_vs_manip_dist.launch \
     planning_space:="${planning_space}" \
     improve:="true" \
     epsilon:="50" \
-    visualize:="true" & 
-wait
+    visualize:="true"
