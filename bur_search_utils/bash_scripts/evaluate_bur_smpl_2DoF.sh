@@ -7,7 +7,7 @@ dataset="$(rospack find bur_search_utils)/experiments/datasets/planar_2DoF"
 for problem_number in 1 2 3
 do
     # Chose motion primitive length
-    for m_prim_len in 4 8 9 10 12
+    for m_prim_len in 4 5 6 7 8 9 10 11 12
     do
         m_prim_file="$(rospack find bur_search_utils)/experiments/datasets/planar_2DoF/m_prim_files/planar_2dof_"$m_prim_len".mprim"
 
@@ -22,7 +22,7 @@ do
         echo "$HEADER" > "$MANIP_DIST_LOG_FILE"
         
         # Execute the experiment 100 times
-        for (( experiment_number=1; experiment_number<=3; experiment_number++ ))
+        for (( experiment_number=1; experiment_number<=100; experiment_number++ ))
         do
             planning_space="manip" # manip and manip_dist allowed
 
