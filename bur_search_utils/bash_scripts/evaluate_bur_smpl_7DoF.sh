@@ -3,10 +3,10 @@ planner="arastar"
 
 dataset="$(rospack find bur_search_utils)/experiments/datasets/planar_7DoF"
 
-# Chose the scene
+# Choose the scene
 for problem_number in 1 2 3
 do
-    # Chose motion primitive length
+    # Choose motion primitive length
     for m_prim_len in 5 6 7 8 9 10 11 12
     do
         m_prim_file="$(rospack find bur_search_utils)/experiments/datasets/planar_7DoF/m_prim_files/planar_7dof_"$m_prim_len".mprim"
