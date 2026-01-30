@@ -1,9 +1,7 @@
 # Bur Search Motion Planning
- Motion planning for robotic manipulators that combines sampling-based and search-based planning methods. Distance-based burs[^1] of free configuration space (C-space) are used as adaptive motion primitives within the graph search algorithm. The algorithm is implemented within the existing SMPL (Search-Based Motion Planning Library) library.
+ Motion planning for robotic manipulators that combines sampling-based and search-based planning methods. Distance-based burs[1] of free configuration space (C-space) are used as adaptive motion primitives within the graph search algorithm. The algorithm is implemented within the existing SMPL (Search-Based Motion Planning Library) library.
 
  :page_facing_up: Paper: [Search-Based Robot Motion Planning With Distance-Based Adaptive Motion Primitives](https://arxiv.org/abs/2507.01198)
-
- [^1] Lacevic, Bakir, et al. Burs of Free C-Space: A Novel Structure for Path Planning. 05 2016, pp. 70–76, https://doi.org/10.1109/ICRA.2016.7487117.
 
 ## :rewind: Prerequisites
 Docker is required and can be installed from this [link](https://docs.docker.com/get-started/get-docker/).
@@ -27,7 +25,7 @@ The Docker container is now running with the terminal attached. The commands in 
 ## :computer: Usage
 The project can be used as:
 - A development environment for search-based robot motion planning using SMPL and/or burs of free C-space.
-- A framework for comparing classical motion-primitive planning with the proposed approach using burs of free C-space as adaptive motion primitives.
+- A framework for comparing classical motion-primitive planning with the proposed approach using burs of free C-space as adaptive motion primitives by running given examples.
 ### :gear: Development environment
 The directory containing the source code is mounted as a volume inside the Docker container, which means that any changes made in the cloned directory on the host machine are reflected in the container as well. As a result, it is not necessary to rebuild the Docker image every time the source code changes.
 
@@ -43,3 +41,6 @@ catkin build
 
 ## :link: Links
 
+## :books: References
+[1] B. Lacevic et al., *Burs of Free C-Space: A Novel Structure for Path Planning*,  
+IEEE ICRA 2016. https://doi.org/10.1109/ICRA.2016.7487117
