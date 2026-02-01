@@ -48,16 +48,21 @@ catkin build
     ```
     > **_NOTE:_**  Every shell attached to the running container must have the ROS environment properly set up; hence the *source devel/setup.bash* part of the previous command.
 
+    2.a (Optional) If RViz visualizations are required, run the following command in a terminal on the host machine:
+    ```bash
+    xhost local:docker
+    ```
+
 3. Run one of the following examples:
     - ```bash 
-      src/bur_search_utils/bash_scripts/manip_vs_manip_dist_7DoF.sh 
+      source src/bur_search_motion_planning/bur_search_utils/bash_scripts/manip_vs_manip_dist_7DoF.sh 
       ```
     <p align="center">
         <img src="bur_search_utils/gifs/7_dof_bur_search_hard.gif" width="50%" height="50%"/>
     </p>
 
     - ```bash 
-      src/bur_search_utils/bash_scripts/manip_vs_manip_dist_2DoF.sh 
+      source src/bur_search_motion_planning/bur_search_utils/bash_scripts/manip_vs_manip_dist_2DoF.sh 
       ```
 
     <p align="center">
@@ -65,10 +70,10 @@ catkin build
     </p>
 
     - ```bash 
-      src/bur_search_utils/bash_scripts/evaluate_bur_smpl_7DoF.sh 
+      source src/bur_search_motion_planning/bur_search_utils/bash_scripts/evaluate_bur_smpl_7DoF.sh 
       ```
     - ```bash 
-      src/bur_search_utils/bash_scripts/evaluate_bur_smpl_2DoF.sh 
+      source src/bur_search_motion_planning/bur_search_utils/bash_scripts/evaluate_bur_smpl_2DoF.sh 
       ```
       The final two examples run a comparison between the classical motion primitive planning and the planning that utilizes burs of free configuration space. Evaluation is performed for 2 degrees of freedom and 7 degrees of freedom across three planning scenarios of different complexities. Scenarios and results are stored in:
       ```bash
