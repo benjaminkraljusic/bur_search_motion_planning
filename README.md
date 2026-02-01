@@ -46,7 +46,7 @@ catkin build
     ```bash
     docker exec -it bur_search_container bash -c "source devel/setup.bash; bash"
     ```
-    > **_NOTE:_**  Every shell attached to the running container must have the ROS environment properly set up; hence the source devel/setup.bash part of the previous command.
+    > **_NOTE:_**  Every shell attached to the running container must have the ROS environment properly set up; hence the *source devel/setup.bash* part of the previous command.
 
 3. Run one of the following examples:
     - ```bash 
