@@ -2,7 +2,7 @@
 
 planner="arastar"
 
-problem_number=${1:-"2"}
+problem_number=${1:-"3"}
 
 planning_space="manip" # manip and manip_dist allowed
 
