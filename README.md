@@ -48,12 +48,11 @@ catkin build
     ```
     > **_NOTE:_**  Every shell attached to the running container must have the ROS environment properly set up; hence the *source devel/setup.bash* part of the previous command.
 
-    2.a (Optional) If RViz visualizations are required, run the following command in a terminal on the host machine:
+3. (Optional) If RViz visualizations are required, run the following command in a terminal on the host machine:
     ```bash
     xhost local:docker
     ```
-
-3. Run one of the following examples:
+4. Run one of the following examples:
     - ```bash 
       source src/bur_search_motion_planning/bur_search_utils/bash_scripts/manip_vs_manip_dist_7DoF.sh 
       ```
